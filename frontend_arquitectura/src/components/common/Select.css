@@ -1,0 +1,73 @@
+/**
+ * Estilos del Select
+ */
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.select--full-width {
+  width: 100%;
+}
+
+.select__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.select__field {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border-main);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-paper);
+  color: var(--color-neutral-dark-gray);
+  transition: all var(--transition-fast);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%234A4A4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.select__field:focus {
+  border-color: var(--color-primary-main);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.select__field:disabled {
+  background: var(--color-neutral-off-white);
+  color: var(--color-neutral-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.select__field--error {
+  border-color: var(--color-status-error);
+}
+
+.select__field--error:focus {
+  box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.1);
+}
+
+.select__field--full-width {
+  width: 100%;
+}
+
+.select__error {
+  font-size: 0.75rem;
+  color: var(--color-status-error);
+  font-weight: 500;
+}
+
+.select__helper {
+  font-size: 0.75rem;
+  color: var(--color-neutral-gray);
+}

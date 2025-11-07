@@ -1,0 +1,128 @@
+/**
+ * Estilos del Button Component
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+/* Tamaños */
+.btn--sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.875rem;
+}
+
+.btn--md {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1rem;
+}
+
+.btn--lg {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: 1.125rem;
+}
+
+/* Variantes */
+.btn--primary {
+  background: var(--color-primary-main);
+  color: var(--color-neutral-white);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
+  background: var(--color-secondary-main);
+  color: var(--color-secondary-contrast);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-secondary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn--success {
+  background: var(--color-status-success);
+  color: var(--color-neutral-white);
+}
+
+.btn--success:hover:not(:disabled) {
+  background: #244012;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn--danger {
+  background: var(--color-status-error);
+  color: var(--color-neutral-white);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: #6d1414;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-primary-main);
+  border: 2px solid var(--color-primary-main);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: var(--color-primary-main);
+  color: var(--color-neutral-white);
+}
+
+/* Full width */
+.btn--full-width {
+  width: 100%;
+}
+
+/* Disabled */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Loading */
+.btn--loading {
+  pointer-events: none;
+}
+
+.btn__spinner {
+  display: inline-flex;
+  animation: spin 1s linear infinite;
+}
+
+.btn__content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

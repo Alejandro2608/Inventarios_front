@@ -1,0 +1,162 @@
+/**
+ * Estilos de la página de Movimientos
+ */
+
+.movimientos {
+  animation: fadeIn var(--transition-base);
+}
+
+.movimientos__header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.movimientos__header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.movimientos__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-neutral-gray);
+}
+
+.movimientos__error {
+  background: rgba(139, 26, 26, 0.1);
+  border-left: 4px solid var(--color-status-error);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  color: var(--color-status-error);
+}
+
+.movimientos__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.movimientos__loading,
+.movimientos__empty {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  color: var(--color-neutral-gray);
+}
+
+.movimientos__empty svg {
+  color: var(--color-border-dark);
+  margin-bottom: var(--spacing-lg);
+}
+
+.movimientos__empty p {
+  font-size: 1.125rem;
+}
+
+.movimientos-table {
+  overflow-x: auto;
+}
+
+.movimientos-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.movimientos-table th {
+  text-align: left;
+  padding: var(--spacing-md);
+  background: var(--color-neutral-off-white);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--color-border-main);
+  white-space: nowrap;
+}
+
+.movimientos-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-neutral-dark-gray);
+}
+
+.movimientos-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.movimientos-table tbody tr:hover {
+  background: rgba(212, 165, 116, 0.05);
+}
+
+.movimientos-table__date {
+  font-size: 0.875rem;
+  color: var(--color-neutral-gray);
+  white-space: nowrap;
+}
+
+.movimientos-table__motivo {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movimientos-table code {
+  background: rgba(139, 69, 19, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-primary-main);
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge--success {
+  background: rgba(45, 80, 22, 0.15);
+  color: var(--color-status-success);
+}
+
+.badge--danger {
+  background: rgba(139, 26, 26, 0.15);
+  color: var(--color-status-error);
+}
+
+.cantidad {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.cantidad--entrada {
+  background: rgba(45, 80, 22, 0.1);
+  color: var(--color-status-success);
+}
+
+.cantidad--salida {
+  background: rgba(139, 26, 26, 0.1);
+  color: var(--color-status-error);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .movimientos__stats {
+    grid-template-columns: 1fr;
+  }
+}

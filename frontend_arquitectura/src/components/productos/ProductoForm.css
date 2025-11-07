@@ -1,0 +1,38 @@
+/**
+ * Estilos del ProductoForm
+ */
+
+.producto-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.producto-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.producto-form__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .producto-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .producto-form__actions {
+    flex-direction: column-reverse;
+  }
+
+  .producto-form__actions button {
+    width: 100%;
+  }
+}

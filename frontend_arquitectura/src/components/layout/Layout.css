@@ -1,0 +1,49 @@
+/**
+ * Estilos del Layout Principal
+ */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-main);
+}
+
+.layout__container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.layout__main {
+  flex: 1;
+  padding: var(--spacing-xl);
+  margin-left: 0;
+  transition: margin-left var(--transition-base);
+  overflow-y: auto;
+}
+
+.layout__main.sidebar-open {
+  margin-left: 250px;
+}
+
+.layout__main.sidebar-closed {
+  margin-left: 0;
+}
+
+.layout__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-base);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layout__main {
+    padding: var(--spacing-md);
+  }
+
+  .layout__main.sidebar-open {
+    margin-left: 0;
+  }
+}

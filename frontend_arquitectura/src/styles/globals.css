@@ -1,0 +1,274 @@
+/**
+ * Estilos globales para LicoCastillo
+ * Paleta sobria y elegante para aplicación de licores
+ */
+
+/* Reset y configuración base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables CSS (coinciden con theme.ts) */
+:root {
+  /* Colores primarios */
+  --color-primary-main: #8b4513;
+  --color-primary-light: #a0522d;
+  --color-primary-dark: #654321;
+  --color-primary-contrast: #ffffff;
+
+  /* Colores secundarios */
+  --color-secondary-main: #d4a574;
+  --color-secondary-light: #e8c89e;
+  --color-secondary-dark: #b8865a;
+  --color-secondary-contrast: #2c1810;
+
+  /* Colores de acento */
+  --color-accent-gold: #d4af37;
+  --color-accent-copper: #b87333;
+  --color-accent-bronze: #cd7f32;
+
+  /* Colores neutros */
+  --color-neutral-black: #1a1a1a;
+  --color-neutral-dark-gray: #2c2c2c;
+  --color-neutral-gray: #4a4a4a;
+  --color-neutral-light-gray: #e5e5e5;
+  --color-neutral-off-white: #f5f5f5;
+  --color-neutral-white: #ffffff;
+
+  /* Colores de estado */
+  --color-status-success: #2d5016;
+  --color-status-warning: #8b6914;
+  --color-status-error: #8b1a1a;
+  --color-status-info: #2c4a6a;
+
+  /* Fondos */
+  --color-bg-main: #f8f6f3;
+  --color-bg-paper: #ffffff;
+  --color-bg-dark: #2c1810;
+  --color-bg-darker: #1a0f0a;
+
+  /* Bordes */
+  --color-border-light: #e0d5c7;
+  --color-border-main: #c4b5a0;
+  --color-border-dark: #8b7355;
+
+  /* Fuentes */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(44, 24, 16, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(44, 24, 16, 0.1),
+    0 2px 4px -1px rgba(44, 24, 16, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(44, 24, 16, 0.1),
+    0 4px 6px -2px rgba(44, 24, 16, 0.05);
+
+  /* Transiciones */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* Configuración base del body */
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-neutral-dark-gray);
+  background-color: var(--color-bg-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Configuración de #root */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 1.875rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.125rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+/* Enlaces */
+a {
+  color: var(--color-primary-main);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Botones */
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  border: 1px solid var(--color-border-main);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: border-color var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary-main);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-main);
+}
+
+/* Clases de utilidad */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: var(--color-primary-main);
+}
+
+.text-secondary {
+  color: var(--color-secondary-main);
+}
+
+.text-muted {
+  color: var(--color-neutral-gray);
+}
+
+.text-success {
+  color: var(--color-status-success);
+}
+
+.text-warning {
+  color: var(--color-status-warning);
+}
+
+.text-error {
+  color: var(--color-status-error);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-base);
+}
+
+.slide-down {
+  animation: slideDown var(--transition-base);
+}
