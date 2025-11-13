@@ -101,8 +101,11 @@ const Productos: React.FC = () => {
     setShowEditModal(true);
   };
 
-  const formatearFecha = (fecha: string) => {
-    return new Date(fecha).toLocaleDateString('es-CO', {
+  const formatearFecha = (fecha: string | null | undefined) => {
+    if (!fecha) return '-';
+    const date = new Date(fecha);
+    if (isNaN(date.getTime())) return 'Fecha inválida';
+    return date.toLocaleDateString('es-CO', {
       year: 'numeric',
       month: 'short',
       day: 'numeric',

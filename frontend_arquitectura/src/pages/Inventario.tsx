@@ -47,7 +47,9 @@ const Inventario: React.FC = () => {
 
   const cargarProductos = async () => {
     try {
-      const data = await productosService.obtenerTodos(true); // Solo activos
+      // Cargar TODOS los productos (incluidos inactivos) para permitir entradas
+      // que reactiven productos que llegaron a stock=0
+      const data = await productosService.obtenerTodos(false);
       setProductos(data);
     } catch (err) {
       console.error('Error al cargar productos:', err);
@@ -255,7 +257,7 @@ const Inventario: React.FC = () => {
                   error={errors.producto_id}
                   options={productos.map((p) => ({
                     value: p.id.toString(),
-                    label: `${p.sku} - ${p.nombre}`,
+                    label: `${p.sku} - ${p.nombre} ${p.estado === 'Inactivo' ? '(Inactivo - Stock: 0)' : ''}`,
                   }))}
                   fullWidth
                 />
@@ -340,10 +342,12 @@ const Inventario: React.FC = () => {
                   value={salidaForm.producto_id.toString()}
                   onChange={handleSalidaChange}
                   error={errors.producto_id}
-                  options={productos.map((p) => ({
-                    value: p.id.toString(),
-                    label: `${p.sku} - ${p.nombre} (Stock: ${p.stock})`,
-                  }))}
+                  options={productos
+                    .filter((p) => p.estado === 'Activo') // Solo mostrar activos para salidas
+                    .map((p) => ({
+                      value: p.id.toString(),
+                      label: `${p.sku} - ${p.nombre} (Stock: ${p.stock})`,
+                    }))}
                   fullWidth
                 />
               </div>
